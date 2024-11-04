@@ -1,31 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Personal Portfolio</title>
-        <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="header">
-    <div class="container">
-        <nav>
-           <img src="images/final.gif" class="logo">
-           <ul>
-            
-                <li><a href="#">Home</a>
-                <li><a href="#">About</a>                   <li><a href="#">Services</a>
-                <li><a href="#">Portfolio</a>
-                <li><a href="#">Contact</a></li>
-            
-           </ul> 
-        </nav>
-        <div class="header-text">
-            <p>Software Engineer</p>
-            <h1><span>H</span>ello <span>W</span>orld!!!</h1>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/final.gif" class="logo" alt="Logo">
+                <div class="burger-menu" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Software <span>D</span>eveloper</p>
+                <h1><span>H</span>ello <span>W</span>orld!!!</h1>
+            </div>
         </div>
     </div>
-  </div>  
+
+    <!-- About Section -->
+    <div id="about" class="container">
+        <h2>About Me</h2>
+        <p>My name is Nojomo Justice Sibisi, I am your Software Engineer with passion.</p>
+        <p>I specialize in building, maintenance, and designing web and app consoles.</p>
+        <p>My main programming language is Java, but I also know JavaScript, Python, HTML, CSS, and batch and shell scripting and Git.</p>
+        <p>I am comfortable working with IDEs and on Linux through Vim.</p>
+        <p>I’m looking to collaborate on Java and JavaScript Web and App development.</p>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services" class="container">
+        <h2>My Services</h2>
+        <div class="service-card">
+            <h3>Web Development</h3>
+            <p>Building responsive and user-friendly websites to meet your business needs.</p>
+        </div>
+        <div class="service-card">
+            <h3>App Development</h3>
+            <p>Designing and developing mobile applications for various platforms.</p>
+        </div>
+        <div class="service-card">
+            <h3>Consulting</h3>
+            <p>Providing expert advice on software solutions and technology trends.</p>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
+
+    <!-- JavaScript for toggling menu and scroll functionality -->
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector("nav ul");
+            menu.classList.toggle("active");
+        }
+
+        // Scroll to Top Function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show or hide the scroll to top button
+        window.onscroll = function() {
+            const btn = document.getElementById("scrollToTopBtn");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    </script>
 </body>
 </html>
